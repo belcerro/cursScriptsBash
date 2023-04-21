@@ -6,3 +6,4 @@ B=${2}
 echo "B és ${B}"
 PRODUCTE=$((A*B))
 echo "${A}*${B}=${PRODUCTE}"
+"alerta amb les cometes"
