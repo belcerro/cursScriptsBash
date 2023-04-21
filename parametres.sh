@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #veurem com funcionen els paràmetres
-PARAMETRE0=${0}
+PARAMETRE=${0}
 #${0} ens indica el nom de l'executable
 echo "el parametre 0 és ${0}"
 #${1} és el primer paràmetre posicional
