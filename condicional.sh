@@ -11,7 +11,7 @@ if [[ $resultado == "Ss" ]]; then
 #Me estaba dando error en la respuesta  
 #porque no había indicado brackets en S/n
 echo "instalando programa..."
-#siqueremos que cuando contestemos que no 
+#si queremos que cuando contestemos que no 
 #imprima otra cosa 'else'
 #echo" otra cosa..."
 #si usamos else cualquier respuesta que no se S dará "otra cosa"
