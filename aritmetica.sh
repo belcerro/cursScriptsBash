@@ -1,7 +1,11 @@
 #!/bin/bash
 
-#aquest scrip ens mostra com
+#aquest script ens mostra com
+#este script nos enseña como
+#this script teaches us how 
 #realitzar les operacions aritmetiques
+#realizar operaciones aritméticas
+#to do arithmetic operations
 
 read -p "introdueix el valor de x: " X
 read -p "introdueix el valor de y: " Y
