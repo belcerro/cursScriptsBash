@@ -3,8 +3,8 @@ echo -n "Escribe un número:  "
 read valor
 if [[ $valor -gt 5 ]]; then
 #opciones que le podemos pasar al if
-# -gt = > mayor que 5; -gt = greater than
-# -lt = < menor que x; -lt = lower than
+# -gt  > mayor que 5; -gt = greater than
+# -lt  < menor que x; -lt = lower than
 # -le < o = que x; -le = lower or equal
 # -ge > o = que x; -ge = greater or equal
 # -eq = que x ; -eq = equal
