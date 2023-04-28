@@ -8,7 +8,7 @@ function usage (){
 NUMBER_PARAM=${#}
 if [[ NUMBER_PARAM -eq 0 ]]
 then 
-   usage
+   usage #creamos la función arriba y la lamamos
 fi
 #OBLIGAR A QUE MÍNIMO SE TENGA QUE INTRODUCIR UN PARÁMETRO
 
