@@ -1,5 +1,11 @@
 #!/bin/bash
-
+function usage(){
+    echo "Usage ${0}"
+    echo
+    echo "Tienes que ser root"
+    echo "el usuario no se puede repetir"
+    exit 1
+}
 #script para crear un usuario
 
 #primero comprobamos que somos el usuario root
@@ -8,10 +14,7 @@
 
 if [[ ${UID} -ne 0 ]] 
 then
-    echo "Usage ${0}"
-    echo
-    echo "Tienes que ser root"
-    exit 1
+    usage
 fi
 
 read -p "Introduce el nombre de usuario: " USER_NAME
