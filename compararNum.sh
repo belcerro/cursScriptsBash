@@ -22,5 +22,6 @@ fi
 #nota
 # crear un archivo y darle permiso de ejecución 
 # al mismo tiempo
-# touch archivo.sh && chmod u+x archivo sh
 
+
+#OPCIÓN -N EN ECHO...

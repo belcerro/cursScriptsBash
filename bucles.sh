@@ -16,3 +16,6 @@ done
 # i és menor que el límite
 # i se incrementa en uno
 #<=;>=
+
+
+#COMPLETAR

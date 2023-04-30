@@ -11,3 +11,4 @@ then
 else
     echo "el número es 5"
 fi
+#EXPLICAR
