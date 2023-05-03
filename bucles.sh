@@ -6,7 +6,6 @@ echo -n "Escribe un número:  "
 read limite
 
 for (( i = 0; i < $limite; 1++ ))
-#ERROR EN LÍNEA 8 (ELEMENTO DE ERROR +)
 
 do
     echo $i 
