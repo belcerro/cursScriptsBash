@@ -1,4 +1,7 @@
 #!/bin/bash
+#script para calcular los bytes de los
+#ficheros de un directorio
+
 #Antes de nada queremos que en caso de no existir
 #el directorio nos de un error
 
