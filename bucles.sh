@@ -3,7 +3,7 @@
 #un bucle es una extructura que hace 
 #que el código se repita varias veces
 echo -n "Escribe un número:  "
-read límite
+read limite
 
 for (( i = 0; i < $limite; 1++ ))
 #ERROR EN LÍNEA 8 (ELEMENTO DE ERROR +)
