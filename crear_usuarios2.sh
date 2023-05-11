@@ -30,14 +30,13 @@ fi
 read -p "Introduce el nombre completo: " COMMENTS
 #Se pide el nombre del usuario
 read -p "Introduce el nombre del usuario: " USER_NAME
-#Se pide la contraseña
-read -p "Introduce la contraseña: " PASSWORD
+#generaremos aleatoriamente
+PASSWORD=$( date %s%N | sha256sum | head -cB )
+
 
 
 #Se crea el usuario
-#-m crea el home
-#-c comentarios ya que el nombre completo contiene espacios
-useradd -m -c "${COMMENTS}" ${USER_NAME} &> /dev/null
+useradd -m -c "${COMMENTS}" ${USER_NAME} &> USER_NAME
 #control del último comando
 if [[ ${?} -ne 0 ]]
 then
@@ -56,6 +55,14 @@ fi
 
 #hacer que caduque la contraseña
 passwd -e ${USER_NAME}
+#IFORMAMOS DEL PASSWORD CRREADO
+echo " Usuari creat: ${USER_NAME}"
+echo "passworg generado: ${PASSWORD}"
+echo "HostName: ${HOSTNAME}"
 
 
 exit 0 #indica que el script acaba bien
+
+
+
+
