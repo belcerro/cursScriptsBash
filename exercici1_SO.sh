@@ -37,19 +37,20 @@ echo "Son les $(date +"%H:%Mh")"
 echo "EXERCICI 4"
 echo "---------------------------------------------------"
 echo "El contingut del directori actual es:"
-ls  .
+ls  -la .
 
 
 # 5) Mostra el contingut del directori temporal /tmp
 echo "EXERCICI 5"
 echo "---------------------------------------------------"
-echo "El contingut del directori temporal /tmp es:"
-ls -l /tmp
+echo "El contingut del directori temporal /tmp es: "
+ls -l ../../../tmp/ | tail -n 1 
 
 # 6) Crea dos directoris nous a /tmp anomenats prova i copies
 echo "EXERCICI 6"
 echo "---------------------------------------------------"
-mkdir /tmp/prova && mkdir /tmp/copies
+mkdir ../../../tmp/prova
+mkdir ../../../tmp/copies
 
 
 # 7) Dins el directori prova del pas anterior, crea la següent estructura:
@@ -57,25 +58,26 @@ mkdir /tmp/prova && mkdir /tmp/copies
 #  /tmp/prova/despeses
 echo "EXERCICI 7"
 echo "---------------------------------------------------"
-mkdir /tmp/prova/ingressos && mkdir /tmp/prova/despeses
+mkdir ../../../tmp/prova/ingressos
+mkdir ../../../tmp/prova/despeses
 
 
 # 8) Modifica els permisos del directori d'ingressos per que tothom hi pugui accedir, llegir i escriure
 echo "EXERCICI 8"
 echo "---------------------------------------------------"
-chmod ugo+rwx /tmp/prova/ingresos
+chmod ugo+rwx ../../../tmp/prova/ingresos
 
 
 # 9) Modifica els permisos del directori despeses per que només el propietari hi tingui accés
 echo "EXERCICI 9"
 echo "---------------------------------------------------"
-chmod go-rwx /tmp/prova/ingresos
+chmod go-rwx ../../../tmp/prova/ingresos
 
 
 # 10) Fes una copia del directori /tmp/prova a /tmp/copia
 echo "EXERCICI 10"
 echo "---------------------------------------------------"
-cp -r /tmp/prova /tmp/copia
+cp -r ../../../tmp/prova ../../../tmp/copia
 
 
 # 11) *Opcional*
@@ -88,7 +90,7 @@ cp -r /tmp/prova /tmp/copia
 # 12) Mostra el contingut del directori /tmp/copia en forma d'arbre
 echo "EXERCICI 12"
 echo "---------------------------------------------------"
-tree /tmp/copia
+tree ../../../tmp/copia
 
 
 # 13) Mostra el contingut del directori /tmp/copies en forma d'arbre
@@ -108,13 +110,13 @@ rm -r /tmp/prova
 #     Usa la comanda df, pots obtenir ajuda amb df --help o man df 
 echo "EXERCICI 15"
 echo "---------------------------------------------------"
-
-
-
+df -h | grep -m 2 "/dev/sda1" |tail -n 1 | awk '{print $4}'
 
 # 16) Mostra l'informació de la memoria del sistema. (Les unitat han de ser human-readable: 10GB, 123Mb, etc...)
 #     Usa la comanda free, pots obtenir ajuda amb free --help o man free
-
+echo "EXERCICI 16"
+echo "---------------------------------------------------"
+free -l -h # -l dona informació més completa del sistema, on surt també la memòria swap
 
 # 17) Crea un nou script, al directori actual, anometat system_info.sh, que mostri informació del disc dur i de la memoria RAM usant les comandes anteriors.
 #     Crida aquest nou script que acabes de crear.
