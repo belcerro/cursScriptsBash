@@ -1,2 +1,2 @@
 #!/bin/bash
-echo " $(date)"
+echo "Avui es dia $(date +"%d/%m/%Y")"
