@@ -88,6 +88,7 @@ echo "EXERCICI 10"
 echo "---------------------------------------------------"
 mkdir /tmp/copies/$(date +"%d/%m/%Y_%H:%Mh")
 cp -r /tmp/prova /tmp/copies/$(date +"%d/%m/%Y_%H:%Mh")
+#no funciona
 
 # 12) Mostra el contingut del directori /tmp/copia en forma d'arbre
 echo "EXERCICI 12"
