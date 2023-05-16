@@ -15,7 +15,7 @@ echo
 echo "EXERCICIC 1"
 echo "---------------------------------------------------"
 echo "El meu primer script"
-echo 
+
 
 
 # 2) Mostra un missatge per pantalla amb la data actual i el format: Avui es dia 18/05/2021
@@ -44,13 +44,13 @@ ls  -la .
 echo "EXERCICI 5"
 echo "---------------------------------------------------"
 echo "El contingut del directori temporal /tmp es: "
-ls -l ../../../tmp/ | tail -n 1 
+ls -l /tmp/ | tail -n 1 
 
 # 6) Crea dos directoris nous a /tmp anomenats prova i copies
 echo "EXERCICI 6"
 echo "---------------------------------------------------"
-mkdir ../../../tmp/prova
-mkdir ../../../tmp/copies
+mkdir /tmp/prova
+mkdir /tmp/copies
 
 
 # 7) Dins el directori prova del pas anterior, crea la següent estructura:
@@ -58,39 +58,41 @@ mkdir ../../../tmp/copies
 #  /tmp/prova/despeses
 echo "EXERCICI 7"
 echo "---------------------------------------------------"
-mkdir ../../../tmp/prova/ingressos
-mkdir ../../../tmp/prova/despeses
+mkdir /tmp/prova/ingressos
+mkdir /tmp/prova/despeses
 
 
 # 8) Modifica els permisos del directori d'ingressos per que tothom hi pugui accedir, llegir i escriure
 echo "EXERCICI 8"
 echo "---------------------------------------------------"
-chmod ugo+rwx ../../../tmp/prova/ingresos
+chmod ugo+rwx /tmp/prova/ingressos 
 
 
 # 9) Modifica els permisos del directori despeses per que només el propietari hi tingui accés
 echo "EXERCICI 9"
 echo "---------------------------------------------------"
-chmod go-rwx ../../../tmp/prova/ingresos
+chmod go-rwx /tmp/prova/ingressos
 
 
 # 10) Fes una copia del directori /tmp/prova a /tmp/copia
 echo "EXERCICI 10"
 echo "---------------------------------------------------"
-cp -r ../../../tmp/prova ../../../tmp/copia
+cp -r /tmp/prova /tmp/copia
 
 
 # 11) *Opcional*
 #     Fes una copia del directori /tmp/prova a /tmp/copies/18052021_1525
 #     El directori de destí ha de tenir la data i la hora del moment en que s'executa l'script
 #     Usa la comanda cp -r /tmp/prova /tmp/copies/$(date +"<FORMAT>"), canvia <FORMAT> pel format de la data corresponent, igual que als punts anteriors.
-
-
+echo "EXERCICI 10"
+echo "---------------------------------------------------"
+mkdir /tmp/copies/$(date +"%d/%m/%Y_%H:%Mh")
+cp -r /tmp/prova /tmp/copies/$(date +"%d/%m/%Y_%H:%Mh")
 
 # 12) Mostra el contingut del directori /tmp/copia en forma d'arbre
 echo "EXERCICI 12"
 echo "---------------------------------------------------"
-tree ../../../tmp/copia
+tree /tmp/copia
 
 
 # 13) Mostra el contingut del directori /tmp/copies en forma d'arbre
@@ -120,19 +122,34 @@ free -l -h # -l dona informació més completa del sistema, on surt també la me
 
 # 17) Crea un nou script, al directori actual, anometat system_info.sh, que mostri informació del disc dur i de la memoria RAM usant les comandes anteriors.
 #     Crida aquest nou script que acabes de crear.
+echo "EXERCICI 17"
+echo "---------------------------------------------------"
+touch system.info.sh
+chmod u+x system_info.sh
+echo "#!/bin/bash" > system_info.sh
+echo "df -h | grep -m 2 "/dev/sda1" |tail -n 1 | awk '{print $4}'" >> system_info.sh
+echo "free -l -h" >> system_info.sh
+chmod u+x system_info.sh
 
 
 # 18) Mostra el contingut de l'script anterior
 #     Usa la comadna cat
+echo "EXERCICI 18"
+echo "---------------------------------------------------"
+cat system_info.sh
 
 
 # 19) Mostra tots els fitxers del directori actual que acabin amb la l'extensió .sh
 #     Has d'usar la comanda cat
-
+ echo "EXERCICI 19"
+ echo "---------------------------------------------------"
+ cat *.sh
 
 # 20) *Opcional*
 #     Fes el mateix que abans, pero usant la comanda find. Pots obtenir ajuda amb find --help o man find.
-
+ echo "EXERCICI 20"
+ echo "---------------------------------------------------"
+ find . -type f -name "*.sh" #-type fichero -name "lo que buscamos"
 
 # Fi. Acabam l'script retornant un 0, axiò vol dir que l'script ha acabat correctament.
 exit 0
