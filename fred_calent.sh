@@ -2,31 +2,29 @@
 
 #Genera un nombre aleatori entre 1 i 10:
 adivina=$(( ( RANDOM % 10 )  + 1 ))
+VIDES=3
 
 ########################################################
 # Escriu el teu codi aqui
 ########################################################
-read -p "Tria un número: " X
-if [ ${X} -eq ${adivina} ]
+while [[ ${VIDES} -ne 0 ]]
+do
+read -p "Introdueix un número: " introduit
+if [ ${introduit} -eq ${adivina} ]
 then 
-    echo "has endevinat el número a la primera"
+    echo "Eureka!"
     exit 0
 fi
-
-read -p "Prova a triar un altre: " Y
-if [ ${Y} -eq ${adivina} ]
+if [ ${introduit} -lt ${adivina} ]
 then
-    echo "has endevinat el número al segon intent"
-    exit 0
-fi
-read -p "Últim intent: " Z
-if [ ${Z} -eq ${adivina} ]
-then
-    echo "has endevinat el número al tercer intent"
+    echo "fred"
 else
-    echo "No has endeviat el número!!!"
-    exit 0
+    echo "Calent"
 fi
+#restar una vida
+VIDES=$((VIDES-1))
+done
+echo "Vides: ${VIDES}"
 
 ########################################################
 # Fi del teu codi
