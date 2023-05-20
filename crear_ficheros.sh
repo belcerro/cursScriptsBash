@@ -46,5 +46,5 @@ do
         name="$4/$10$i.$2"
     fi
     `touch $name`
-    echo "Creado fichero $name" | tr -s /
+    echo "Creado fichero $name" | tr -s / #hace que no se repita la barra /
 done
