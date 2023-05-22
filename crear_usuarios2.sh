@@ -4,6 +4,7 @@ function usage(){
     echo "Usage ${0}"
     echo
     echo "Tienes que ser root"
+    echo "El usuario no se puede repetir"
 
     exit 1
 }
@@ -31,7 +32,7 @@ read -p "Introduce el nombre completo: " COMMENTS
 #Se pide el nombre del usuario
 read -p "Introduce el nombre del usuario: " USER_NAME
 #generaremos aleatoriamente
-PASSWORD=$( date %s%N | sha256sum | head -cB )
+PASSWORD=$( date +%s%N | sha256sum | head -cB )
 
 
 
@@ -64,5 +65,5 @@ echo "HostName: ${HOSTNAME}"
 exit 0 #indica que el script acaba bien
 
 
-
+#NO FUNCIONA
 
