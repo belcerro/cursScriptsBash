@@ -4,7 +4,7 @@ function usage(){
     echo "Usage ${0} USER_NAME [COMMENTS]"
     echo
     echo "Tienes que ser root"
-    echo "COMMENT incluirá el nombre completo del usuario"
+    echo "COMMENTS incluirá el nombre completo del usuario"
     exit 1 #INDICA ERROR
 }
 #script para crear un usuario
@@ -53,6 +53,7 @@ fi
 #hacer que caduque la contraseña
 passwd -e ${USER_NAME}
 #IFORMAMOS DEL PASSWORD CRREADO
+echo "nombre completo: ${COMMENTS}"
 echo " Usuari creat: ${USER_NAME}"
 echo "passworg generado: ${PASSWORD}"
 echo "HostName: ${HOSTNAME}"
