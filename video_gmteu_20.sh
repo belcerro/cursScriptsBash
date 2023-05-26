@@ -14,21 +14,29 @@ then
     echo "USAGE: ${0} USER_NAME [USER_NAME]..."
     exit 1
 fi
-#no entiendo esta parte
-
 
 #${*} enseña el conjunto de parámetros en una sola palabra
 echo "${*}"
 
 #${@} enseña el conjunto de parámetres en palabras diferentes
 echo "${@}"
-
+#FOR ES UN BUCLE QUE SE EJECUTA POR CADA ELEMENTO ${@}
 #estructura de control para iterar parámetros
 for USER_NAME in "${@}"
 do 
+#ENTRAREMOS EN ESTE BLOC TANTAS VECES COMO PARAMETROS QUE PONGAMOS EN EL SCRIPT
     PASSWORD=$(date +%s%N | sha256sum | head -c10)
     echo "${USER_NAME}:${PASSWORD}"
 done
 #si en vez de @ uso * cogerá los 3 parametros "belen cerro campoy"
 #como un solo nombre de user, poniendo @ interpretará cada parámetro
 #como un nombre de usuario
+
+echo "INTERACIÓN CON WHILE"
+while [[ ${#} -ge 1 ]]
+do
+    USER_NAME=${1}
+    PASSWORD=$(date +%s%N | sha256sum | head -c10)
+    echo "${USER_NAME}:${PASSWORD}"
+    shift
+done
