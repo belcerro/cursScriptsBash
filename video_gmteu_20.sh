@@ -27,6 +27,7 @@ do
 #ENTRAREMOS EN ESTE BLOC TANTAS VECES COMO PARAMETROS QUE PONGAMOS EN EL SCRIPT
     PASSWORD=$(date +%s%N | sha256sum | head -c10)
     echo "${USER_NAME}:${PASSWORD}"
+    useradd -m -c "${@}" ${USER_NAME} &> /dev/null
 done
 #si en vez de @ uso * cogerá los 3 parametros "belen cerro campoy"
 #como un solo nombre de user, poniendo @ interpretará cada parámetro
